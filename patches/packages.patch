@@ -1,0 +1,118 @@
+--- a/install/packages.sh
++++ b/install/packages.sh
+@@ -1,3 +1,89 @@
+-sudo pacman -S --noconfirm --needed \
++# Install packages with ARM compatibility check
++if [[ "$OMARCHY_ARM" == "true" ]]; then
++  # ARM-compatible packages only
++  sudo pacman -S --noconfirm --needed \
++    alacritty \
++    avahi \
++    bash-completion \
++    bat \
++    blueberry \
++    brightnessctl \
++    btop \
++    cargo \
++    clang \
++    cups \
++    cups-browsed \
++    cups-filters \
++    cups-pdf \
++    docker \
++    docker-compose \
++    evince \
++    eza \
++    fastfetch \
++    fcitx5 \
++    fcitx5-gtk \
++    fcitx5-qt \
++    fd \
++    ffmpegthumbnailer \
++    fzf \
++    github-cli \
++    gnome-calculator \
++    gnome-keyring \
++    gnome-themes-extra \
++    gum \
++    gvfs-mtp \
++    hypridle \
++    hyprland \
++    hyprland-qtutils \
++    hyprlock \
++    hyprpicker \
++    hyprshot \
++    hyprsunset \
++    imagemagick \
++    impala \
++    imv \
++    inetutils \
++    jq \
++    kvantum-qt5 \
++    lazydocker \
++    lazygit \
++    less \
++    libqalculate \
++    libreoffice-fresh \
++    llvm \
++    luarocks \
++    mako \
++    man \
++    mariadb-libs \
++    mise \
++    mpv \
++    nautilus \
++    noto-fonts \
++    noto-fonts-cjk \
++    noto-fonts-emoji \
++    noto-fonts-extra \
++    nss-mdns \
++    nvim \
++    pamixer \
++    playerctl \
++    plocate \
++    plymouth \
++    polkit-gnome \
++    postgresql-libs \
++    power-profiles-daemon \
++    python-gobject \
++    python-poetry-core \
++    ripgrep \
++    satty \
++    slurp \
++    starship \
++    sushi \
++    swaybg \
++    swayosd \
++    system-config-printer \
++    tldr \
++    tree-sitter-cli \
++    ttf-cascadia-mono-nerd \
++    ttf-font-awesome \
++    ttf-jetbrains-mono \
++    ufw \
++    unzip \
++    uwsm \
++    waybar \
++    wf-recorder \
++    whois \
++    wiremix \
++    wireplumber \
++    wl-clip-persist \
++    wl-clipboard \
++    xdg-desktop-portal-gtk \
++    xdg-desktop-portal-hyprland \
++    xmlstarlet \
++    xournalpp \
++    zoxide
++else
++  # Full package list for x86_64
++  sudo pacman -S --noconfirm --needed \
+   1password-beta \
+   1password-cli \
+   alacritty \
+@@ -120,3 +206,4 @@
+   yaru-icon-theme \
+   yay \
+   zoxide
++fi

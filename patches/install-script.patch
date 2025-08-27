@@ -1,0 +1,25 @@
+--- a/install.sh
++++ b/install.sh
+@@ -62,8 +62,16 @@
+ 
+ # Reboot
+ clear
+-tte -i ~/.local/share/omarchy/logo.txt --frame-rate 920 laseretch
+-echo
+-echo "You're done! So we're ready to reboot now..." | tte --frame-rate 640 wipe
++if [[ "$OMARCHY_ARM" == "true" ]] || ! command -v tte >/dev/null 2>&1; then
++  # Display simple message on ARM or when tte is not available
++  if [[ -f ~/.local/share/omarchy/logo.txt ]]; then
++    cat ~/.local/share/omarchy/logo.txt
++  fi
++  echo
++  echo "You're done! So we're ready to reboot now..."
++else
++  # Use fancy animations on x86_64 when tte is available
++  tte -i ~/.local/share/omarchy/logo.txt --frame-rate 920 laseretch
++  echo
++  echo "You're done! So we're ready to reboot now..." | tte --frame-rate 640 wipe
++fi
+ 
+ if sudo test -f /etc/sudoers.d/99-omarchy-installer; then
+   sudo rm -f /etc/sudoers.d/99-omarchy-installer &>/dev/null

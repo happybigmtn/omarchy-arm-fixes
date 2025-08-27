@@ -1,0 +1,18 @@
+--- a/bin/omarchy-launch-webapp
++++ b/bin/omarchy-launch-webapp
+@@ -4,7 +4,13 @@
+ 
+ case $browser in
+ google-chrome* | brave-browser* | microsoft-edge* | opera* | vivaldi*) ;;
+-*) browser="chromium.desktop" ;;
++*) 
++  # Check if we're on ARM and use Firefox instead of Chromium
++  if [[ "$OMARCHY_ARM" == "true" ]] && [[ -f "/usr/share/applications/firefox.desktop" ]]; then
++    browser="firefox.desktop"
++  else
++    browser="chromium.desktop"
++  fi
++  ;;
+ esac
+ 
+ exec setsid uwsm app -- $(sed -n 's/^Exec=\([^ ]*\).*/\1/p' {~/.local,/usr}/share/applications/$browser 2>/dev/null | head -1) --app="$1" "${@:2}"

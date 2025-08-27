@@ -1,0 +1,25 @@
+--- a/install/config/mimetypes.sh
++++ b/install/config/mimetypes.sh
+@@ -14,9 +14,17 @@
+ # Open PDFs with the Document Viewer
+ xdg-mime default org.gnome.Evince.desktop application/pdf
+ 
+-# Use Chromium as the default browser
+-xdg-settings set default-web-browser chromium.desktop
+-xdg-mime default chromium.desktop x-scheme-handler/http
+-xdg-mime default chromium.desktop x-scheme-handler/https
++# Set default browser based on system architecture
++if [[ "$OMARCHY_ARM" == "true" ]]; then
++  # Use Firefox on ARM systems
++  xdg-settings set default-web-browser firefox.desktop
++  xdg-mime default firefox.desktop x-scheme-handler/http
++  xdg-mime default firefox.desktop x-scheme-handler/https
++else
++  # Use Chromium on x86_64 systems
++  xdg-settings set default-web-browser chromium.desktop
++  xdg-mime default chromium.desktop x-scheme-handler/http
++  xdg-mime default chromium.desktop x-scheme-handler/https
++fi
+ 
+ # Open video files with mpv
+ xdg-mime default mpv.desktop video/mp4
