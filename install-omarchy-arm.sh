@@ -20,13 +20,13 @@ fi
 # Get the directory where this script is located
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-echo "Step 1: Cloning original Omarchy repository..."
+echo "Step 1: Cloning Armarchy repository (ARM-focused fork)..."
 if [[ -d ~/.local/share/omarchy ]]; then
     echo "Omarchy directory already exists. Backing up..."
     mv ~/.local/share/omarchy ~/.local/share/omarchy.backup.$(date +%Y%m%d-%H%M%S)
 fi
 
-git clone https://github.com/omarhanykasban/omarchy.git ~/.local/share/omarchy
+git clone https://github.com/nilszeilon/armarchy.git ~/.local/share/omarchy
 cd ~/.local/share/omarchy
 
 echo "Step 2: Applying ARM compatibility patches..."

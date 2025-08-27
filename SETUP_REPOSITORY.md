@@ -108,7 +108,7 @@ Share your repository URL with other ARM users who need these fixes.
 
 Keep your repository updated by:
 
-1. **Monitoring Omarchy updates** - Check if upstream changes break the fixes
+1. **Monitoring Armarchy updates** - Check if upstream changes break the fixes
 2. **Testing new ARM packages** - Some previously unavailable packages may become available
 3. **Updating documentation** - Keep technical details current
 4. **Collecting user feedback** - Track issues reported by users

@@ -1,10 +1,10 @@
 # Omarchy ARM Installation Fix
 
-This repository contains fixes for installing Omarchy on ARM architecture systems (aarch64), specifically tested on Arch Linux ARM.
+This repository contains fixes for installing Omarchy on ARM architecture systems (aarch64), specifically tested on Arch Linux ARM. These fixes work with the Armarchy fork (https://github.com/nilszeilon/armarchy) which is an ARM-focused version of Omarchy.
 
 ## Overview
 
-The original Omarchy installation script has several issues when running on ARM systems:
+Even the ARM-focused Armarchy installation script has several issues when running on ARM systems:
 
 1. **Package availability**: Many packages in the default list aren't available for ARM
 2. **Browser configuration**: Chromium isn't available, requiring Firefox as alternative
@@ -29,8 +29,8 @@ If you prefer to understand and apply fixes manually:
 ### 1. Initial Omarchy Clone
 
 ```bash
-# Clone the original Omarchy repository
-git clone https://github.com/omarhanykasban/omarchy.git ~/.local/share/omarchy
+# Clone the Armarchy repository (ARM-focused fork of Omarchy)
+git clone https://github.com/nilszeilon/armarchy.git ~/.local/share/omarchy
 cd ~/.local/share/omarchy
 ```
 
