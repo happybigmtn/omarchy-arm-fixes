@@ -6,8 +6,9 @@
  google-chrome* | brave-browser* | microsoft-edge* | opera* | vivaldi*) ;;
 -*) browser="chromium.desktop" ;;
 +*) 
-+  # Check if we're on ARM and use Firefox instead of Chromium
-+  if [[ "$OMARCHY_ARM" == "true" ]] && [[ -f "/usr/share/applications/firefox.desktop" ]]; then
++  # Check if we're on ARM architecture and use Firefox instead of Chromium
++  arch=$(uname -m)
++  if [[ "$arch" == "aarch64" || "$arch" == "arm64" ]] && [[ -f "/usr/share/applications/firefox.desktop" ]]; then
 +    browser="firefox.desktop"
 +  else
 +    browser="chromium.desktop"

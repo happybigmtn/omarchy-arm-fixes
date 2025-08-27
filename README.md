@@ -76,8 +76,9 @@ cd ~/.local/share/omarchy
 - `install/config/mimetypes.sh`
 
 **Fix**: Added ARM detection and Firefox fallback:
-- Modified webapp launcher to use Firefox on ARM systems
+- Modified webapp launcher to dynamically detect ARM architecture and use Firefox
 - Updated MIME type configuration to set Firefox as default on ARM
+- Fixed web app keybindings (Super+X, Super+A, etc.) to use Firefox instead of Chromium
 
 ### 3. Missing Configuration Files
 
