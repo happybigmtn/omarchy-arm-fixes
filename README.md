@@ -79,6 +79,7 @@ cd ~/.local/share/omarchy
 - Modified webapp launcher to dynamically detect ARM architecture and use Firefox
 - Updated MIME type configuration to set Firefox as default on ARM
 - Fixed web app keybindings (Super+X, Super+A, etc.) to use Firefox instead of Chromium
+- Fixed Firefox URL navigation using --new-window instead of unsupported --app flag
 
 ### 3. Missing Configuration Files
 
