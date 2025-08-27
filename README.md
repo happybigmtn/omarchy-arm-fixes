@@ -15,7 +15,7 @@ The original Omarchy installation script has several issues when running on ARM 
 
 ```bash
 # Clone this repository
-git clone <your-repo-url> ~/omarchy-arm-fixes
+git clone https://github.com/happybigmtn/omarchy-arm-fixes.git ~/omarchy-arm-fixes
 cd ~/omarchy-arm-fixes
 
 # Run the ARM installation fix script
